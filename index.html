@@ -302,8 +302,8 @@
   const card = document.querySelector('.card');
   const music = document.getElementById('birthday-music');
   const messageElement = document.getElementById('typed-message');
-  const fullMessage =
-  "May your special day be filled with joy, laughter, and beautiful moments. Many more Happy Returns of the Day.";
+ const fullMessage =
+  "May your special day be filled with joy, laughter, and beautiful moments.<br><br>Many more Happy Returns of the Day.";
   let typingTimeout;
   let isTyping = false;
 
@@ -314,7 +314,7 @@
     
     function type() {
       if (index < text.length) {
-        element.textContent += text.charAt(index);
+       element.innerHTML = text.substring(0, index);
         index++;
         typingTimeout = setTimeout(type, speed);
       } else {
@@ -372,6 +372,7 @@
 </body>
 
 </html>
+
 
 
 
